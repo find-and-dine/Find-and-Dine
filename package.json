@@ -1,17 +1,33 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
+  "name": "ghrsea08-front-end-capstone",
+  "description": "> Project description",
   "author": "",
-  "license": "",
+  "license": "ISC",
   "engines": {
     "node": ">=6.13.0"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
+    "axios": "^0.19.2",
+    "faker": "^4.1.0"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
-  }
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^1.7.0"
+  },
+  "version": "1.0.0",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackreactor/ghrsea08-front-end-capstone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hackreactor/ghrsea08-front-end-capstone/issues"
+  },
+  "homepage": "https://github.com/hackreactor/ghrsea08-front-end-capstone#readme"
 }

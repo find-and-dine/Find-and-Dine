@@ -5,7 +5,7 @@ const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
-  console.log('Connected to your umm what idk?');
+  console.log('Connected to mongoDb');
 });
 
 const imageSchema = new mongoose.Schema({
@@ -24,3 +24,4 @@ const imageSchema = new mongoose.Schema({
 const Image = mongoose.model('Image', imageSchema);
 
 module.exports = Image;
+module.exports = db;

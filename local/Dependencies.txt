@@ -3,3 +3,4 @@ faker
 eslint
 express
 mongoose
+body parser

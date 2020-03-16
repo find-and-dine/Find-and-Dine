@@ -4,3 +4,5 @@ eslint
 express
 mongoose
 body parser
+webpack
+path

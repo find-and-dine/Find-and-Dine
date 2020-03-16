@@ -2,7 +2,6 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
-    node: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -12,6 +11,7 @@ module.exports = {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
+  parser: "babel-eslint",
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -19,6 +19,9 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
+  babelOptions: {
+    configFile: "./babelrc"
+  }
   plugins: [
     'react',
   ],

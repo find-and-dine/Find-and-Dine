@@ -1,12 +1,13 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const path = require('path');
+
 const app = express();
 const db = require('../database/index.js');
+
 const PORT = 3001;
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.resolve(__dirname, '..','public')))
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.resolve(__dirname, '..', 'public')));
 
 
 app.get('/photos/:id', (req, res) => {
@@ -18,7 +19,8 @@ app.get('/photos/:id', (req, res) => {
   });
 });
 
-app.listen(PORT, () =>console.log('You are listening to port: ', { PORT }));
+// eslint-disable-next-line no-console
+app.listen(PORT, () => console.log(`You are listening to port ${PORT}`));
 
 module.export = app;
 

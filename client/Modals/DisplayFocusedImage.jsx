@@ -1,19 +1,18 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import ImageDisplay from './ImageDisplay';
-import LeftButton from './LeftButton';
-import RightButton from './RightButton';
+import OnHoverModal from '../HoverModals/OnHoverModal';
 
 class DisplayFocusedImage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dynamicPhotoIndex: 0,
-      onHoverModal: false,
+      dynamicPhotoIndex: props.photoIndex,
+      toggleHoverModal: false,
     };
     this.leftButtonClickHandler = this.leftButtonClickHandler.bind(this);
     this.rightButtonClickHandler = this.rightButtonClickHandler.bind(this);
-    this.onHoverModal = this.handleOnHover.bind(this);
+    this.toggleHoverModal = this.handleOnHover.bind(this);
     this.toggleOnHoverState = this.toggleOnHoverState.bind(this);
   }
 
@@ -32,14 +31,14 @@ class DisplayFocusedImage extends Component {
   }
 
   handleOnHover() {
-    alert('Move on or hover over dude')
+    console.log('this.state.index', this.state.dynamicPhotoIndex)
     this.setState(this.toggleOnHoverState);
   }
 
   toggleOnHoverState() {
-    const { onHoverModal } = this.state;
+    const { toggleHoverModal } = this.state;
     return {
-      onHoverModal: !onHoverModal,
+      toggleHoverModal: !toggleHoverModal,
     };
   }
 
@@ -47,46 +46,29 @@ class DisplayFocusedImage extends Component {
     const { photos } = this.props;
     const { dynamicPhotoIndex } = this.state;
     const image = photos[0].photo[dynamicPhotoIndex];
+
     return (
       <div className="image-gallery-modal-container">
-        <div className="image-background"
-          onMouseEnter={this.onHoverModal}
-          onMouseLeave={this.onHoverModal}
-        >
-          {null}
-        </div>
         <ImageDisplay
           image={image}
         />
         <div
           className="image-onHover-modal-container"
         >
-          <div className="image-background"
-            onMouseEnter={this.onHoverModal}
-            onMouseLeave={this.onHoverModal}
-          ></div>
-          <LeftButton
+          <OnHoverModal
+            photoIndex={dynamicPhotoIndex}
+            image={image}
             leftClick={this.leftButtonClickHandler}
-          />
-          <RightButton
             rightClick={this.rightButtonClickHandler}
           />
-
+          <div
+            className="image-hover-section"
+            onMouseEnter={this.toggleHoverModal}
+            onMouseLeave={this.toggleHoverModal}
+          >
+            {null}
+          </div>
         </div>
-        {/* TODO: Carousel */}
-        <div className="image-carousel">
-          {null}
-        </div>
-        <div className="image-gallery">
-          {/* TODO: Gallery */}
-        </div>
-        <div className="image-helpful">
-          {/* TODO: Helpful */}
-        </div>
-        <div className="image-report">
-          {/* TODO: Report */}
-        </div>
-
       </div>
     );
   }

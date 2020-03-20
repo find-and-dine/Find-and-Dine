@@ -45,16 +45,16 @@ class App extends Component {
     } = this.state;
     return (
       <div>
-        <div className="image_mosaic">
+        <div className="image-mosaic">
           {photosLoaded ? (
             <ImageMosaic
               photos={photos}
               openModal={this.clickImageModal}
             />
           )
-            : <div>{null}</div>}
+            : null}
         </div>
-        <div id="focused_image_viewer">
+        <div id="focused-image-viewer">
           {photoModal ? (
             <FocusedImagesModal
               closeModal={this.exitImageModal}
@@ -62,7 +62,7 @@ class App extends Component {
               photos={photos}
             />
           )
-            : <div>{null}</div>}
+            : null}
         </div>
       </div>
     );

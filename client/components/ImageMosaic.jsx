@@ -12,7 +12,7 @@ class ImageMosaic extends Component {
     const { photos, openModal } = this.props;
     const { photo } = photos[0];
     return (
-      <div className="grid_mosaic">
+      <div className="grid-mosaic">
         <GridMosaic
           photo={photo}
           openModal={openModal}

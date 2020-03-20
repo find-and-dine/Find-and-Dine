@@ -9,6 +9,7 @@ class DisplayFocusedImage extends Component {
     super(props);
     this.state = {
       dynamicPhotoIndex: 0,
+      onHooverModal: false,
     };
     this.leftButtonClickHandler = this.leftButtonClickHandler.bind(this);
     this.rightButtonClickHandler = this.rightButtonClickHandler.bind(this);
@@ -45,16 +46,13 @@ class DisplayFocusedImage extends Component {
         <ImageDisplay
           image={image}
         />
-        <LeftButton
-          leftClick={this.leftButtonClickHandler}
-        />
-        <RightButton
-          rightClick={this.rightButtonClickHandler}
-        />
-
-
         <div className="image_onHover_modal_container">
-
+          <LeftButton
+            leftClick={this.leftButtonClickHandler}
+          />
+          <RightButton
+            rightClick={this.rightButtonClickHandler}
+          />
         </div>
         <div className="image_carousel">
           Carousel

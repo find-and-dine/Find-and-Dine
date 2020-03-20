@@ -1,13 +1,13 @@
 import React from 'react';
 
 const RightButton = ({ rightClick }) => (
-  <button
-    id="left_button"
+  <div
+    id="right_button"
     onClick={rightClick}
     type="button"
   >
     &#62;
-  </button>
+  </div>
 );
 
 export default RightButton;

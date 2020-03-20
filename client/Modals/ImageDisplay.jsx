@@ -1,13 +1,19 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 
-const ImageDisplay = ({ image, leftButtonClickHandler, rightButtonClickHandler }) => (
+const ImageDisplay = ({ image, onMouseEnter, onMouseLeave }) => (
 
-  <div className="image_viewer_container">
+  <div className="image-viewer-container">
     <img
       src={image.url}
       alt={image.caption}
-      className="image_display"
+      className="image-display"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     />
+    <div className="image-background">
+      {null}
+    </div>
   </div>
 
 

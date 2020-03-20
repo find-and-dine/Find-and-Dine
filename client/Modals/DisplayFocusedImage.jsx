@@ -9,20 +9,14 @@ class DisplayFocusedImage extends Component {
     super(props);
     this.state = {
       dynamicPhotoIndex: 0,
-      onHooverModal: false,
+      onHoverModal: false,
     };
     this.leftButtonClickHandler = this.leftButtonClickHandler.bind(this);
     this.rightButtonClickHandler = this.rightButtonClickHandler.bind(this);
+    this.onHoverModal = this.handleOnHover.bind(this);
+    this.toggleOnHoverState = this.toggleOnHoverState.bind(this);
   }
 
-  componentDidMount() {
-    const { photoIndex } = this.props;
-    this.setState({
-      dynamicPhotoIndex: photoIndex,
-    });
-  }
-
-  //TODO: add left and right click
   leftButtonClickHandler() {
     const { dynamicPhotoIndex } = this.state;
     this.setState({
@@ -37,34 +31,51 @@ class DisplayFocusedImage extends Component {
     });
   }
 
+  handleOnHover() {
+    this.setState(this.toggleOnHoverState);
+  }
+
+  toggleOnHoverState() {
+    const { onHoverModal } = this.state;
+    return {
+      onHoverModal: !onHoverModal,
+    };
+  }
+
   render() {
-    const { photos, leftButtonClickHandler, rightButtonClickHandler } = this.props;
+    const { photos } = this.props;
     const { dynamicPhotoIndex } = this.state;
     const image = photos[0].photo[dynamicPhotoIndex];
     return (
-      <div className="image_gallery_modal_container">
+      <div className="image-gallery-modal-container">
         <ImageDisplay
           image={image}
+          onMouseEnter={this.onHoverModal}
+          onMouseLeave={this.onHoverModal}
         />
-        <div className="image_onHover_modal_container">
+        <div
+          className="image-onHover-modal-container"
+        >
           <LeftButton
             leftClick={this.leftButtonClickHandler}
           />
           <RightButton
             rightClick={this.rightButtonClickHandler}
           />
+
         </div>
-        <div className="image_carousel">
-          Carousel
+        {/* TODO: Carousel */}
+        <div className="image-carousel">
+          {null}
         </div>
-        <div className="image_gallery">
-          Gallery
+        <div className="image-gallery">
+          {/* TODO: Gallery */}
         </div>
-        <div className="image_helpful">
-          Helpful?
+        <div className="image-helpful">
+          {/* TODO: Helpful */}
         </div>
-        <div className="image_report">
-          Report
+        <div className="image-report">
+          {/* TODO: Report */}
         </div>
 
       </div>

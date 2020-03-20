@@ -2,7 +2,7 @@ import React from 'react';
 
 const LeftButton = ({ leftClick }) => (
   <div
-    id="left_button"
+    id="left-button"
     onClick={leftClick}
   >
     &#60;

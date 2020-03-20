@@ -27,27 +27,25 @@ class FocusedImagesModal extends Component {
     const { closeModal, photos, photoIndex } = this.props;
     return ReactDOM.createPortal(
       <div>
-        <div className="image_gallery_modal_container">
+        <div className="image-gallery-modal-container">
 
-          <div className="top_bar_exit_container">
+          <div className="top-bar-exit-container">
             <button
               onClick={closeModal}
               type="button"
-              id="exit_button"
+              id="exit-button"
             >
               &times;
             </button>
           </div>
 
-          <div className="sidebar_column">
+          <div className="sidebar-column">
 
             <DisplaySidebar
               photos={photos}
             />
           </div>
-          <div className="image_background">
-          </div>
-          <div className="image_gallery_modal_container">
+          <div className="image-gallery-modal-container">
             <DisplayFocusedImage
               photos={photos}
               photoIndex={photoIndex}

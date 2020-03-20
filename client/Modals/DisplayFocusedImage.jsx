@@ -1,5 +1,8 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
+import ImageDisplay from './ImageDisplay';
+import LeftButton from './LeftButton';
+import RightButton from './RightButton';
 
 class DisplayFocusedImage extends Component {
   constructor(props) {
@@ -7,6 +10,8 @@ class DisplayFocusedImage extends Component {
     this.state = {
       dynamicPhotoIndex: 0,
     };
+    this.leftButtonClickHandler = this.leftButtonClickHandler.bind(this);
+    this.rightButtonClickHandler = this.rightButtonClickHandler.bind(this);
   }
 
   componentDidMount() {
@@ -16,18 +21,40 @@ class DisplayFocusedImage extends Component {
     });
   }
 
+  //TODO: add left and right click
+  leftButtonClickHandler() {
+    const { dynamicPhotoIndex } = this.state;
+    this.setState({
+      dynamicPhotoIndex: dynamicPhotoIndex - 1,
+    });
+  }
+
+  rightButtonClickHandler() {
+    const { dynamicPhotoIndex } = this.state;
+    this.setState({
+      dynamicPhotoIndex: dynamicPhotoIndex + 1,
+    });
+  }
+
   render() {
-    const { photos } = this.props;
+    const { photos, leftButtonClickHandler, rightButtonClickHandler } = this.props;
     const { dynamicPhotoIndex } = this.state;
     const image = photos[0].photo[dynamicPhotoIndex];
     return (
-      <div className="image_position_container">
-        <div className="image_viewer_container">
-          <img
-            src={image.url}
-            alt={image.caption}
-            className="image_display"
-          />
+      <div className="image_gallery_modal_container">
+        <ImageDisplay
+          image={image}
+        />
+        <LeftButton
+          leftClick={this.leftButtonClickHandler}
+        />
+        <RightButton
+          rightClick={this.rightButtonClickHandler}
+        />
+
+
+        <div className="image_onHover_modal_container">
+
         </div>
         <div className="image_carousel">
           Carousel

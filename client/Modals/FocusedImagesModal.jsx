@@ -47,11 +47,12 @@ class FocusedImagesModal extends Component {
           </div>
           <div className="image_background">
           </div>
+          <div className="image_gallery_modal_container">
             <DisplayFocusedImage
               photos={photos}
               photoIndex={photoIndex}
             />
-
+          </div>
         </div>
       </div>,
       this.modal,

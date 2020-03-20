@@ -21,9 +21,13 @@ class DisplayFocusedImage extends Component {
     const { dynamicPhotoIndex } = this.state;
     const image = photos[0].photo[dynamicPhotoIndex];
     return (
-      <div>
-        <div className="image_viewer">
-          <img src={image.url} alt={image.caption} />
+      <div className="image_position_container">
+        <div className="image_viewer_container">
+          <img
+            src={image.url}
+            alt={image.caption}
+            className="image_display"
+          />
         </div>
         <div className="image_carousel">
           Carousel
@@ -37,6 +41,7 @@ class DisplayFocusedImage extends Component {
         <div className="image_report">
           Report
         </div>
+
       </div>
     );
   }

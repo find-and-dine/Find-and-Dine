@@ -46,8 +46,13 @@ class App extends Component {
     return (
       <div>
         <div className="image_mosaic">
-          {photosLoaded ? <ImageMosaic photos={photos} openModal={this.clickImageModal} />
-            : <div>Help</div>}
+          {photosLoaded ? (
+            <ImageMosaic
+              photos={photos}
+              openModal={this.clickImageModal}
+            />
+          )
+            : <div>{null}</div>}
         </div>
         <div id="focused_image_viewer">
           {photoModal ? (

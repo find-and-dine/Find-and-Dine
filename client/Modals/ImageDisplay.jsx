@@ -4,6 +4,8 @@ import React from 'react';
 const ImageDisplay = ({ image, onMouseEnter, onMouseLeave }) => (
 
   <div className="image-viewer-container">
+    <div className="image-background">
+    </div>
     <img
       src={image.url}
       alt={image.caption}
@@ -11,9 +13,6 @@ const ImageDisplay = ({ image, onMouseEnter, onMouseLeave }) => (
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     />
-    <div className="image-background">
-      {null}
-    </div>
   </div>
 
 

@@ -32,6 +32,7 @@ class DisplayFocusedImage extends Component {
   }
 
   handleOnHover() {
+    alert('Move on or hover over dude')
     this.setState(this.toggleOnHoverState);
   }
 
@@ -48,14 +49,22 @@ class DisplayFocusedImage extends Component {
     const image = photos[0].photo[dynamicPhotoIndex];
     return (
       <div className="image-gallery-modal-container">
-        <ImageDisplay
-          image={image}
+        <div className="image-background"
           onMouseEnter={this.onHoverModal}
           onMouseLeave={this.onHoverModal}
+        >
+          {null}
+        </div>
+        <ImageDisplay
+          image={image}
         />
         <div
           className="image-onHover-modal-container"
         >
+          <div className="image-background"
+            onMouseEnter={this.onHoverModal}
+            onMouseLeave={this.onHoverModal}
+          ></div>
           <LeftButton
             leftClick={this.leftButtonClickHandler}
           />

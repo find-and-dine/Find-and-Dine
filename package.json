@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "Guilt-Tripadvisor",
   "version": "",
   "description": "",
   "author": "",
@@ -12,7 +12,9 @@
     "start-dev": "nodemon server/index.js",
     "seed": "node database/seedDb.js",
     "build": "webpack",
-    "build-dev": "webpack -w"
+    "build-dev": "webpack -w",
+    "eslint": "eslint",
+    "test": ""
   },
   "dependencies": {
     "axios": "^0.19.2",

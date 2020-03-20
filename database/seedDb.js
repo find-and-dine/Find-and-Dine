@@ -5,8 +5,7 @@ let accum = 0;
 
 const makeOnePhoto = () => {
   const photoObject = {
-    // url: faker.image.imageUrl(),
-    url: `https://picsum.photos/id/${accum += 1}/200/300`,
+    url: `https://picsum.photos/id/${accum += 1}/1200/860`,
     caption: faker.lorem.sentence(),
     ownersubmitted: faker.random.boolean(),
     rating: Math.floor((Math.random() * 5) + 1),
@@ -42,7 +41,6 @@ const restaurants = restaurantImages();
 restaurants.forEach((image) => {
   new Image(image).save((err) => {
     if (err) {
-    // eslint-disable-next-line no-console
       console.error(err);
     }
   });

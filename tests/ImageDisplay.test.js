@@ -11,6 +11,7 @@ it('mounts', () => {
   const wrap = shallow(
     <ImageDisplay
       photos={dummyData.photo}
+      image={dummyData.photo}
     />
   );
   expect(wrap.exists());

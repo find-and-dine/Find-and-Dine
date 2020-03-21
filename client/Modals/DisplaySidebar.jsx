@@ -2,18 +2,28 @@
 import React from 'react';
 
 
-const DisplaySidebar = ({ photos }) => (
+const DisplaySidebar = ({ photo, photoIndex }) => (
 
   <div className="sidebar-container">
+    {console.log(photoIndex)}
     <div id="caption-sidebar">
-      {console.log(photos)}
-      <div className="caption-box"> BOX </div>
-      <div className="caption-icon"> ICON </div>
-      <div className="caption-text"> TEXT </div>
-      <div className="caption-box"> FOUR </div>
+      <span className="sidebar-thumbnail">
+        <img
+          className="thumbnail-image"
+          src={photo.thumbnail}
+          alt={photo.caption}
+          height="50px"
+          width="50px"
+        />
+      </span>
+      <span>
+<div className="caption-text">{photo.caption}</div>
+      </span>
+
     </div>
     <img
-      src="./resources/ad.png" alt="sample"
+      src="./resources/ad.png"
+      alt="sample"
     />
   </div>
 );

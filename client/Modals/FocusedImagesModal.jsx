@@ -41,9 +41,10 @@ class FocusedImagesModal extends Component {
             id="image-black-background"
           />
           <div className="sidebar-column">
-
             <DisplaySidebar
               photos={photos}
+              photoIndex={photoIndex}
+
             />
           </div>
           <div className="image-gallery-modal-container">

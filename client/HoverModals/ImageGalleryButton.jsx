@@ -2,7 +2,10 @@ import React from 'react';
 //incomplete
 const ImageGalleryButton = () => (
   <div id="image-gallery-button">
-    ImageGalleryButton
+    <img
+      src="./resources/gallery.png"
+      alt="gallery button"
+    />
   </div>
 );
 

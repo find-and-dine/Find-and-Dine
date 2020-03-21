@@ -14,7 +14,7 @@
     "build": "webpack",
     "build-dev": "webpack -w",
     "eslint": "eslint",
-    "test": ""
+    "test": "jest --coverage"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -33,6 +33,8 @@
     "@babel/preset-react": "^7.8.3",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
@@ -43,5 +45,10 @@
     "jest": "^25.1.0",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/tests/setup/setupTests.js"
+    ]
   }
 }

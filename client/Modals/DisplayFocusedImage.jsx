@@ -66,7 +66,6 @@ class DisplayFocusedImage extends Component {
               leftClick={this.leftButtonClickHandler}
               rightClick={this.rightButtonClickHandler}
             />
-
           </div>
         </div>
       );

@@ -12,8 +12,8 @@ class DisplayFocusedImage extends Component {
     };
     this.leftButtonClickHandler = this.leftButtonClickHandler.bind(this);
     this.rightButtonClickHandler = this.rightButtonClickHandler.bind(this);
-    this.toggleHoverModal = this.handleOnHover.bind(this);
-    this.toggleOnHoverState = this.toggleOnHoverState.bind(this);
+    this.toggleHoverModal = this.toggleHoverModal.bind(this);
+    // this.toggleOnHoverState = this.toggleOnHoverState.bind(this);
   }
 
   leftButtonClickHandler() {
@@ -30,23 +30,43 @@ class DisplayFocusedImage extends Component {
     });
   }
 
-  handleOnHover() {
-    console.log('this.state.index', this.state.dynamicPhotoIndex)
-    this.setState(this.toggleOnHoverState);
-  }
-
-  toggleOnHoverState() {
+  toggleHoverModal() {
+    console.log('this.state.index', this.state.dynamicPhotoIndex);
     const { toggleHoverModal } = this.state;
-    return {
+    this.setState({
       toggleHoverModal: !toggleHoverModal,
-    };
+    });
   }
 
+  //TODO: Use conditional rendering to Display overlay
   render() {
     const { photos } = this.props;
-    const { dynamicPhotoIndex } = this.state;
+    const { dynamicPhotoIndex, toggleHoverModal } = this.state;
     const image = photos[0].photo[dynamicPhotoIndex];
+    if (toggleHoverModal === true) {
+      return (
+        <div className="image-gallery-modal-container">
+          <ImageDisplay
+            image={image}
+          />
+          <div
+            className="image-onHover-modal-container"
+            onMouseEnter={this.toggleHoverModal}
+            onMouseLeave={this.toggleHoverModal}
+          >
 
+            <OnHoverModal
+              photos={photos}
+              photoIndex={dynamicPhotoIndex}
+              image={image}
+              leftClick={this.leftButtonClickHandler}
+              rightClick={this.rightButtonClickHandler}
+            />
+
+          </div>
+        </div>
+      );
+    }
     return (
       <div className="image-gallery-modal-container">
         <ImageDisplay
@@ -54,20 +74,10 @@ class DisplayFocusedImage extends Component {
         />
         <div
           className="image-onHover-modal-container"
+          onMouseEnter={this.toggleHoverModal}
+          onMouseLeave={this.toggleHoverModal}
         >
-          <OnHoverModal
-            photoIndex={dynamicPhotoIndex}
-            image={image}
-            leftClick={this.leftButtonClickHandler}
-            rightClick={this.rightButtonClickHandler}
-          />
-          <div
-            className="image-hover-section"
-            onMouseEnter={this.toggleHoverModal}
-            onMouseLeave={this.toggleHoverModal}
-          >
-            {null}
-          </div>
+          {null}
         </div>
       </div>
     );

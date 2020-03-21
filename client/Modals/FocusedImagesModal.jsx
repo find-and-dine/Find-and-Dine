@@ -6,7 +6,6 @@ import DisplayFocusedImage from './DisplayFocusedImage';
 import DisplaySidebar from './DisplaySidebar';
 
 const modalRoot = document.getElementById('modal-root');
-console.log(modalRoot);
 class FocusedImagesModal extends Component {
   constructor(props) {
     super(props);
@@ -28,9 +27,6 @@ class FocusedImagesModal extends Component {
     return ReactDOM.createPortal(
       <div>
         <div className="image-gallery-modal-container">
-          <div
-            id="image-black-background"
-          />
           <button
             onClick={closeModal}
             type="button"
@@ -38,8 +34,12 @@ class FocusedImagesModal extends Component {
           >
             &times;
           </button>
-
-
+          <div
+            id="exit-button-background"
+          />
+          <div
+            id="image-black-background"
+          />
           <div className="sidebar-column">
 
             <DisplaySidebar

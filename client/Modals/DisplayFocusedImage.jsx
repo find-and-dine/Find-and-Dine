@@ -2,19 +2,18 @@
 import React, { Component } from 'react';
 import ImageDisplay from './ImageDisplay';
 import OnHoverModal from '../HoverModals/OnHoverModal';
-//FIX toggleModal
+
 class DisplayFocusedImage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       dynamicPhotoIndex: props.photoIndex,
-      toggleHoverModal: true,
+      toggleHoverModal: false,
     };
     this.leftButtonClickHandler = this.leftButtonClickHandler.bind(this);
     this.rightButtonClickHandler = this.rightButtonClickHandler.bind(this);
     this.toggleHoverModal = this.toggleHoverModal.bind(this);
     this.handleImageClick = this.handleImageClick.bind(this);
-    // this.toggleOnHoverState = this.toggleOnHoverState.bind(this);
   }
 
   leftButtonClickHandler() {
@@ -31,12 +30,10 @@ class DisplayFocusedImage extends Component {
     });
   }
 
-  //FIX toggleModal
-
   toggleHoverModal() {
     const { toggleHoverModal } = this.state;
     this.setState({
-      toggleHoverModal: toggleHoverModal,
+      toggleHoverModal: !toggleHoverModal,
     });
   }
 

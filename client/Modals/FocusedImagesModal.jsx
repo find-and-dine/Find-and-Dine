@@ -6,7 +6,7 @@ import DisplayFocusedImage from './DisplayFocusedImage';
 import DisplaySidebar from './DisplaySidebar';
 
 const modalRoot = document.getElementById('modal-root');
-
+console.log(modalRoot);
 class FocusedImagesModal extends Component {
   constructor(props) {
     super(props);

@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('/photos/34')
+    axios.get('/photos/34').then()
       .then((response) => (this.setState({ photos: response.data, photosLoaded: true })))
       .catch((err) => console.log(err));
   }

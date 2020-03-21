@@ -10,9 +10,6 @@ const ImageDisplay = ({ image }) => (
       className="image-display"
     />
   </div>
-
-
-
 );
 
 export default ImageDisplay;

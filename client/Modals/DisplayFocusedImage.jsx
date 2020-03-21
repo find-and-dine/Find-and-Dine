@@ -8,13 +8,12 @@ class DisplayFocusedImage extends Component {
     super(props);
     this.state = {
       dynamicPhotoIndex: props.photoIndex,
-      //FIX toggleHoverModal
       toggleHoverModal: false,
     };
     this.leftButtonClickHandler = this.leftButtonClickHandler.bind(this);
     this.rightButtonClickHandler = this.rightButtonClickHandler.bind(this);
     this.toggleHoverModal = this.toggleHoverModal.bind(this);
-    // this.toggleOnHoverState = this.toggleOnHoverState.bind(this);
+    this.handleImageClick = this.handleImageClick.bind(this);
   }
 
   leftButtonClickHandler() {
@@ -30,27 +29,30 @@ class DisplayFocusedImage extends Component {
       dynamicPhotoIndex: dynamicPhotoIndex + 1,
     });
   }
-  //FIX ! in setState
 
   toggleHoverModal() {
-    console.log('this.state.index', );
     const { toggleHoverModal } = this.state;
-    console.log('this.state.index', toggleHoverModal);
     this.setState({
       toggleHoverModal: !toggleHoverModal,
     });
   }
 
-  //TODO: Use conditional rendering to Display overlay
+  handleImageClick(selectedPhoto) {
+    this.setState({
+      dynamicPhotoIndex: selectedPhoto,
+    });
+  }
+
   render() {
     const { photos } = this.props;
+    const { photo } = photos;
     const { dynamicPhotoIndex, toggleHoverModal } = this.state;
-    const image = photos[0].photo[dynamicPhotoIndex];
+
     if (toggleHoverModal === true) {
       return (
         <div className="image-gallery-modal-container">
           <ImageDisplay
-            image={image}
+            image={photo[dynamicPhotoIndex]}
           />
           <div
             id="image-black-background"
@@ -59,10 +61,13 @@ class DisplayFocusedImage extends Component {
             className="image-onHover-modal-container"
             onMouseLeave={this.toggleHoverModal}
           >
+
             <OnHoverModal
+
               photos={photos}
+              handleImageClick={this.handleImageClick}
               photoIndex={dynamicPhotoIndex}
-              image={image}
+              image={photo[dynamicPhotoIndex]}
               leftClick={this.leftButtonClickHandler}
               rightClick={this.rightButtonClickHandler}
             />
@@ -73,7 +78,7 @@ class DisplayFocusedImage extends Component {
     return (
       <div className="image-gallery-modal-container">
         <ImageDisplay
-          image={image}
+          image={photo[dynamicPhotoIndex]}
         />
         <div
           className="image-onHover-modal-container"

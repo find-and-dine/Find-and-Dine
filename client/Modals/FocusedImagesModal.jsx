@@ -28,16 +28,17 @@ class FocusedImagesModal extends Component {
     return ReactDOM.createPortal(
       <div>
         <div className="image-gallery-modal-container">
+          <div
+            id="image-black-background"
+          />
+          <button
+            onClick={closeModal}
+            type="button"
+            id="exit-button"
+          >
+            &times;
+          </button>
 
-          <div className="top-bar-exit-container">
-            <button
-              onClick={closeModal}
-              type="button"
-              id="exit-button"
-            >
-              &times;
-            </button>
-          </div>
 
           <div className="sidebar-column">
 

@@ -8,9 +8,9 @@ const ImageDisplay = ({ image }) => (
       src={image.url}
       alt={image.caption}
       className="image-display"
-
     />
   </div>
+
 
 
 );

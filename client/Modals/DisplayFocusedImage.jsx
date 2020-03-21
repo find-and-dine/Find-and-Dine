@@ -8,6 +8,7 @@ class DisplayFocusedImage extends Component {
     super(props);
     this.state = {
       dynamicPhotoIndex: props.photoIndex,
+      //FIX toggleHoverModal
       toggleHoverModal: false,
     };
     this.leftButtonClickHandler = this.leftButtonClickHandler.bind(this);
@@ -29,10 +30,12 @@ class DisplayFocusedImage extends Component {
       dynamicPhotoIndex: dynamicPhotoIndex + 1,
     });
   }
+  //FIX ! in setState
 
   toggleHoverModal() {
-    console.log('this.state.index', this.state.dynamicPhotoIndex);
+    console.log('this.state.index', );
     const { toggleHoverModal } = this.state;
+    console.log('this.state.index', toggleHoverModal);
     this.setState({
       toggleHoverModal: !toggleHoverModal,
     });
@@ -50,11 +53,12 @@ class DisplayFocusedImage extends Component {
             image={image}
           />
           <div
+            id="image-black-background"
+          />
+          <div
             className="image-onHover-modal-container"
-            onMouseEnter={this.toggleHoverModal}
             onMouseLeave={this.toggleHoverModal}
           >
-
             <OnHoverModal
               photos={photos}
               photoIndex={dynamicPhotoIndex}
@@ -75,7 +79,6 @@ class DisplayFocusedImage extends Component {
         <div
           className="image-onHover-modal-container"
           onMouseEnter={this.toggleHoverModal}
-          onMouseLeave={this.toggleHoverModal}
         >
           {null}
         </div>

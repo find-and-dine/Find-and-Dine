@@ -5,6 +5,7 @@ const ImageGalleryButton = () => (
     <img
       src="./resources/gallery.png"
       alt="gallery button"
+      width="100%"
     />
   </div>
 );

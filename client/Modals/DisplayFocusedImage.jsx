@@ -2,13 +2,13 @@
 import React, { Component } from 'react';
 import ImageDisplay from './ImageDisplay';
 import OnHoverModal from '../HoverModals/OnHoverModal';
-
+//fix modal on and off
 class DisplayFocusedImage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       dynamicPhotoIndex: props.photoIndex,
-      toggleHoverModal: false,
+      toggleHoverModal: true,
     };
     this.leftButtonClickHandler = this.leftButtonClickHandler.bind(this);
     this.rightButtonClickHandler = this.rightButtonClickHandler.bind(this);
@@ -21,6 +21,7 @@ class DisplayFocusedImage extends Component {
     this.setState({
       dynamicPhotoIndex: dynamicPhotoIndex - 1,
     });
+    console.log('left: ', dynamicPhotoIndex);
   }
 
   rightButtonClickHandler() {
@@ -28,12 +29,13 @@ class DisplayFocusedImage extends Component {
     this.setState({
       dynamicPhotoIndex: dynamicPhotoIndex + 1,
     });
+    console.log('right:', dynamicPhotoIndex);
   }
 
   toggleHoverModal() {
     const { toggleHoverModal } = this.state;
     this.setState({
-      toggleHoverModal: !toggleHoverModal,
+      toggleHoverModal: toggleHoverModal,
     });
   }
 
@@ -63,7 +65,6 @@ class DisplayFocusedImage extends Component {
           >
 
             <OnHoverModal
-
               photos={photos}
               handleImageClick={this.handleImageClick}
               photoIndex={dynamicPhotoIndex}

@@ -4,6 +4,8 @@ import LeftButton from './LeftButton';
 import RightButton from './RightButton';
 import Carousel from './Carousel';
 import ImageGalleryButton from './ImageGalleryButton';
+import ImageHelpfulButton from './ImageHelpfulButton';
+import ImageReportButton from './ImageReportButton';
 
 class OnHoverModal extends Component {
   constructor(props) {
@@ -13,14 +15,6 @@ class OnHoverModal extends Component {
 
     };
   }
-  /*
-      TODO:
-      Add Left and right button,
-       gallery button,
-       flag,
-       thumbs,
-       and carousel to this Component
-  */
 
   render() {
     const {
@@ -39,16 +33,18 @@ class OnHoverModal extends Component {
           />
           {/* TODO: Carousel */}
           {/* check to see if carousel needs id */}
-          <Carousel
-            handleImageClick={handleImageClick}
-            photos={photos}
-            photoIndex={photoIndex}
-            images={image}
-          />
+          <div id="image-carousel-position">
+            <Carousel
+              handleImageClick={handleImageClick}
+              photos={photos}
+              photoIndex={photoIndex}
+              images={image}
+            />
+          </div>
           <ImageGalleryButton />
-          {/* TODO: Helpful */}
+          <ImageHelpfulButton />
+          <ImageReportButton />
         </div>
-        {/* TODO: Report */}
       </div>
     );
   }

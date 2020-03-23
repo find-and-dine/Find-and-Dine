@@ -10,6 +10,7 @@ class FocusedImagesModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
+
     };
     this.modal = document.createElement('div');
   }
@@ -24,6 +25,8 @@ class FocusedImagesModal extends Component {
 
   render() {
     const { closeModal, photos, photoIndex } = this.props;
+    const { photo } = photos;
+    console.log(photoIndex);
     return ReactDOM.createPortal(
       <div>
         <div className="image-gallery-modal-container">
@@ -41,10 +44,10 @@ class FocusedImagesModal extends Component {
             id="image-black-background"
           />
           <div className="sidebar-column">
+             {/* photoIndex={photoIndex} */}
             <DisplaySidebar
-              photos={photos}
+              photo={photo}
               photoIndex={photoIndex}
-
             />
           </div>
           <div className="image-gallery-modal-container">

@@ -18,15 +18,15 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('/photos/34').then()
+    axios.get('/photos/55').then()
       .then((response) => (this.setState({ photos: response.data[0], photosLoaded: true })))
       .catch((err) => console.log(err));
   }
 
-  clickImageModal(photo) {
+  clickImageModal(photoIndex) {
     this.setState({
       photoModal: true,
-      photoIndex: photo,
+      photoIndex: photoIndex,
 
     });
   }

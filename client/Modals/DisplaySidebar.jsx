@@ -1,42 +1,27 @@
 /* eslint-disable react/prop-types */
-import React, { Component } from 'react';
+import React from 'react';
 
-class DisplaySidebar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      dynamicPhotoIndex: props.photoIndex,
-      photo: props.photo,
-    };
-  }
-
-  render() {
-    const { photo, dynamicPhotoIndex } = this.state;
-    return (
-      <div className="sidebar-container">
-
-        <div id="caption-sidebar">
-          <span className="sidebar-thumbnail">
-            <img
-              className="thumbnail-image"
-              src={photo[dynamicPhotoIndex].thumbnail}
-              alt={photo[dynamicPhotoIndex].caption}
-              height="50px"
-              width="50px"
-            />
-          </span>
-          <span>
-            <div className="caption-text">{photo[dynamicPhotoIndex].caption}</div>
-          </span>
-
-        </div>
+const DisplaySidebar = ({ photo, photoIndex }) => (
+  <div className="sidebar-container">
+    <div id="caption-sidebar">
+      <span className="sidebar-thumbnail">
         <img
-          src="./resources/ad.png"
-          alt="sample"
+          className="thumbnail-image"
+          src={photo[photoIndex].thumbnail}
+          alt={photo[photoIndex].caption}
+          height="50px"
+          width="50px"
         />
-      </div>
-    )
-  }
-}
+      </span>
+      <span>
+        <div className="caption-text">{photo[photoIndex].caption}</div>
+      </span>
+    </div>
+    <img
+      src="./resources/ad.png"
+      alt="ad"
+    />
+  </div>
+);
 
 export default DisplaySidebar;

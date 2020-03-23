@@ -1,47 +1,104 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 
+import ImageDisplay from './ImageDisplay';
+import OnHoverModal from '../HoverModals/OnHoverModal';
+import DisplaySidebar from './DisplaySidebar';
+
+
 class DisplayFocusedImage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dynamicPhotoIndex: 0,
+      dynamicPhotoIndex: props.photoIndex,
+      toggleHoverModal: false,
     };
+    this.leftButtonClickHandler = this.leftButtonClickHandler.bind(this);
+    this.rightButtonClickHandler = this.rightButtonClickHandler.bind(this);
+    this.toggleHoverModal = this.toggleHoverModal.bind(this);
+    this.handleImageClick = this.handleImageClick.bind(this);
   }
 
-  componentDidMount() {
-    const { photoIndex } = this.props;
+  leftButtonClickHandler() {
+    const { dynamicPhotoIndex } = this.state;
     this.setState({
-      dynamicPhotoIndex: photoIndex,
+      dynamicPhotoIndex: dynamicPhotoIndex - 1,
+    });
+  }
+
+  rightButtonClickHandler() {
+    const { dynamicPhotoIndex } = this.state;
+    this.setState({
+      dynamicPhotoIndex: dynamicPhotoIndex + 1,
+    });
+  }
+
+  toggleHoverModal() {
+    const { toggleHoverModal } = this.state;
+    this.setState({
+      toggleHoverModal: !toggleHoverModal,
+    });
+  }
+
+  handleImageClick(selectedPhoto) {
+    this.setState({
+      dynamicPhotoIndex: selectedPhoto,
     });
   }
 
   render() {
     const { photos } = this.props;
-    const { dynamicPhotoIndex } = this.state;
-    const image = photos[0].photo[dynamicPhotoIndex];
+    const { photo } = photos;
+    const { dynamicPhotoIndex, toggleHoverModal } = this.state;
+
+    if (toggleHoverModal === true) {
+      return (
+        <div className="image-gallery-modal-container">
+          <ImageDisplay
+            image={photo[dynamicPhotoIndex]}
+          />
+          <div className="sidebar-column">
+            <DisplaySidebar
+              photo={photo}
+              photoIndex={dynamicPhotoIndex}
+            />
+          </div>
+          <div
+            id="image-black-background"
+          />
+          <div
+            className="image-onHover-modal-container"
+            onMouseLeave={this.toggleHoverModal}
+          >
+            <OnHoverModal
+              photos={photos}
+              handleImageClick={this.handleImageClick}
+              photoIndex={dynamicPhotoIndex}
+              image={photo[dynamicPhotoIndex]}
+              leftClick={this.leftButtonClickHandler}
+              rightClick={this.rightButtonClickHandler}
+            />
+          </div>
+        </div>
+      );
+    }
     return (
-      <div className="image_position_container">
-        <div className="image_viewer_container">
-          <img
-            src={image.url}
-            alt={image.caption}
-            className="image_display"
+      <div className="image-gallery-modal-container">
+        <ImageDisplay
+          image={photo[dynamicPhotoIndex]}
+        />
+        <div className="sidebar-column">
+          <DisplaySidebar
+            photo={photo}
+            photoIndex={dynamicPhotoIndex}
           />
         </div>
-        <div className="image_carousel">
-          Carousel
+        <div
+          className="image-onHover-modal-container"
+          onMouseEnter={this.toggleHoverModal}
+        >
+          {null}
         </div>
-        <div className="image_gallery">
-          Gallery
-        </div>
-        <div className="image_helpful">
-          Helpful?
-        </div>
-        <div className="image_report">
-          Report
-        </div>
-
       </div>
     );
   }

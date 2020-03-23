@@ -3,14 +3,13 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import DisplayFocusedImage from './DisplayFocusedImage';
-import DisplaySidebar from './DisplaySidebar';
 
 const modalRoot = document.getElementById('modal-root');
-
 class FocusedImagesModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      dynamicPhotoIndex: props.photoIndex,
     };
     this.modal = document.createElement('div');
   }
@@ -25,33 +24,30 @@ class FocusedImagesModal extends Component {
 
   render() {
     const { closeModal, photos, photoIndex } = this.props;
+    const { photo } = photos;
+    console.log(photoIndex);
     return ReactDOM.createPortal(
       <div>
-        <div className="image_gallery_modal_container">
-
-          <div className="top_bar_exit_container">
-            <button
-              onClick={closeModal}
-              type="button"
-              id="exit_button"
-            >
-              &times;
-            </button>
-          </div>
-
-          <div className="sidebar_column">
-
-            <DisplaySidebar
-              photos={photos}
-            />
-          </div>
-          <div className="image_background">
-          </div>
+        <div className="image-gallery-modal-container">
+          <button
+            onClick={closeModal}
+            type="button"
+            id="exit-button"
+          >
+            &times;
+          </button>
+          <div
+            id="exit-button-background"
+          />
+          <div
+            id="image-black-background"
+          />
+          <div className="image-gallery-modal-container">
             <DisplayFocusedImage
               photos={photos}
               photoIndex={photoIndex}
             />
-
+          </div>
         </div>
       </div>,
       this.modal,

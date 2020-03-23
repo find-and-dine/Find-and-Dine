@@ -10,7 +10,7 @@ const GridMosaic = ({ photo, openModal }) => {
       <div className={`box${i}`}>
         <img
           key={`${i}value`}
-          className="image_mosaic"
+          className="image-mosaic"
           src={photo[i].url}
           alt="Error"
           onClick={() => { openModal(i); }}

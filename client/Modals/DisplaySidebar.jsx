@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import Rating from './Rating';
 
 const DisplaySidebar = ({ photo, photoIndex }) => (
-  <div className="sidebar-container">
-    <div id="caption-sidebar">
+  <div className="sidebar-background">
+    <div id="sidebar-container">
       <span className="sidebar-thumbnail">
         <img
           className="thumbnail-image"
@@ -14,7 +15,12 @@ const DisplaySidebar = ({ photo, photoIndex }) => (
         />
       </span>
       <span>
-        <div>Rating: {photo[photoIndex].rating}</div>
+        <div id="sidebar-rating">
+          <Rating
+            photo={photo}
+            photoIndex={photoIndex}
+          />
+        </div>
         <div className="caption-text">{photo[photoIndex].caption}</div>
         <div> Traveler photo submitted by {photo[photoIndex].username}</div>
       </span>

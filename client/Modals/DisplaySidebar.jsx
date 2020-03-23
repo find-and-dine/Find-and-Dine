@@ -14,7 +14,9 @@ const DisplaySidebar = ({ photo, photoIndex }) => (
         />
       </span>
       <span>
+        <div>Rating: {photo[photoIndex].rating}</div>
         <div className="caption-text">{photo[photoIndex].caption}</div>
+        <div> Traveler photo submitted by {photo[photoIndex].username}</div>
       </span>
     </div>
     <img

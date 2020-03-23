@@ -16,4 +16,5 @@ it('mounts', () => {
     />
   );
   expect(wrap.exists());
+  expect('photos' in wrap.state()).toEqual(dummyData);
 });

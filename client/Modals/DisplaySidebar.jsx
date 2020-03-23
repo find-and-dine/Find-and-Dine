@@ -1,29 +1,33 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-
+import Rating from './Rating';
 
 const DisplaySidebar = ({ photo, photoIndex }) => (
-
-  <div className="sidebar-container">
-    {console.log(photoIndex)}
-    <div id="caption-sidebar">
+  <div className="sidebar-background">
+    <div id="sidebar-container">
       <span className="sidebar-thumbnail">
         <img
           className="thumbnail-image"
-          src={photo.thumbnail}
-          alt={photo.caption}
+          src={photo[photoIndex].thumbnail}
+          alt={photo[photoIndex].caption}
           height="50px"
           width="50px"
         />
       </span>
       <span>
-<div className="caption-text">{photo.caption}</div>
+        <div id="sidebar-rating">
+          <Rating
+            photo={photo}
+            photoIndex={photoIndex}
+          />
+        </div>
+        <div className="caption-text">{photo[photoIndex].caption}</div>
+        <div> Traveler photo submitted by {photo[photoIndex].username}</div>
       </span>
-
     </div>
     <img
       src="./resources/ad.png"
-      alt="sample"
+      alt="ad"
     />
   </div>
 );

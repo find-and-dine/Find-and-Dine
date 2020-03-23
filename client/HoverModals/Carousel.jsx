@@ -20,7 +20,7 @@ function Carousel({
         onClick={() => { handleImageClick(index); }}
         alt={image.caption}
         height="75px"
-        width="75x"
+        width="auto"
       />,
     );
   });

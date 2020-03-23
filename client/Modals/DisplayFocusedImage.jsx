@@ -1,7 +1,10 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
+
 import ImageDisplay from './ImageDisplay';
 import OnHoverModal from '../HoverModals/OnHoverModal';
+import DisplaySidebar from './DisplaySidebar';
+
 
 class DisplayFocusedImage extends Component {
   constructor(props) {
@@ -54,6 +57,12 @@ class DisplayFocusedImage extends Component {
           <ImageDisplay
             image={photo[dynamicPhotoIndex]}
           />
+          <div className="sidebar-column">
+            <DisplaySidebar
+              photo={photo}
+              photoIndex={dynamicPhotoIndex}
+            />
+          </div>
           <div
             id="image-black-background"
           />
@@ -61,7 +70,6 @@ class DisplayFocusedImage extends Component {
             className="image-onHover-modal-container"
             onMouseLeave={this.toggleHoverModal}
           >
-
             <OnHoverModal
               photos={photos}
               handleImageClick={this.handleImageClick}
@@ -79,6 +87,12 @@ class DisplayFocusedImage extends Component {
         <ImageDisplay
           image={photo[dynamicPhotoIndex]}
         />
+        <div className="sidebar-column">
+          <DisplaySidebar
+            photo={photo}
+            photoIndex={dynamicPhotoIndex}
+          />
+        </div>
         <div
           className="image-onHover-modal-container"
           onMouseEnter={this.toggleHoverModal}

@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import DisplayFocusedImage from './DisplayFocusedImage';
-import DisplaySidebar from './DisplaySidebar';
 
 const modalRoot = document.getElementById('modal-root');
 class FocusedImagesModal extends Component {
@@ -43,13 +42,6 @@ class FocusedImagesModal extends Component {
           <div
             id="image-black-background"
           />
-          <div className="sidebar-column">
-            {/* photoIndex={photoIndex} */}
-            <DisplaySidebar
-              photo={photo}
-              photoIndex={photoIndex}
-            />
-          </div>
           <div className="image-gallery-modal-container">
             <DisplayFocusedImage
               photos={photos}

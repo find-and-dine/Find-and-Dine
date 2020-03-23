@@ -10,7 +10,7 @@ class FocusedImagesModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      dynamicPhotoIndex: props.photoIndex,
     };
     this.modal = document.createElement('div');
   }
@@ -44,7 +44,7 @@ class FocusedImagesModal extends Component {
             id="image-black-background"
           />
           <div className="sidebar-column">
-             {/* photoIndex={photoIndex} */}
+            {/* photoIndex={photoIndex} */}
             <DisplaySidebar
               photo={photo}
               photoIndex={photoIndex}

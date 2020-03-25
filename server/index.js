@@ -24,6 +24,11 @@ app.get('/photos/:id', (req, res) => {
   });
 });
 
+app.get('/api/bundle', (req, res) => {
+  console.log('this is a test');
+  res.sendFile(path.resolve(__dirname, '..', 'public', 'bundle.js'));
+});
+
 app.listen(PORT, () => console.log(`You are listening to port ${PORT}`));
 
 module.export = app;

@@ -2,11 +2,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import path from 'path';
-
 import App from './components/App';
 import './styles.css';
 
-
-
-ReactDOM.render( <App id={path.basename(document.URL)} />, document.getElementById('image-gallery'),
-);
+console.log('service', window.document.URL);
+ReactDOM.render(<App id={path.basename(window.document.URL)} />, document.getElementById('image-gallery'));

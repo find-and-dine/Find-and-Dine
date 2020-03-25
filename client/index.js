@@ -1,8 +1,12 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import path from 'path';
 
-ReactDOM.render(
-  <App />, document.getElementById('app'),
+import App from './components/App';
+import './styles.css';
+
+
+
+ReactDOM.render( <App id={path.basename(document.URL)} />, document.getElementById('image-gallery'),
 );

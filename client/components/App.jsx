@@ -60,7 +60,7 @@ class App extends Component {
         </div>
         <div id="focused-image-viewer">
           {photoModal ? (
-            <div id="modal-root">
+            <div id="image-gallery-modal-root">
               <FocusedImagesModal
                 closeModal={this.exitImageModal}
                 photoIndex={photoIndex}

@@ -22,11 +22,14 @@ const DisplaySidebar = ({ photo, photoIndex }) => (
           />
         </div>
         <div className="caption-text">{photo[photoIndex].caption}</div>
-        <div> Traveler photo submitted by {photo[photoIndex].username}</div>
+        <div>
+          Traveler photo submitted by
+          {photo[photoIndex].username}
+        </div>
       </span>
     </div>
     <img
-      src="./resources/ad.png"
+      src="https://guilttripadvisor-phonxay.s3.us-east-2.amazonaws.com/ad.png"
       alt="ad"
     />
   </div>

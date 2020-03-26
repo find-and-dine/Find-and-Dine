@@ -1,3 +1,4 @@
+/* eslint-disable radix */
 import React from 'react';
 
 function Rating({ photo, photoIndex }) {
@@ -6,7 +7,7 @@ function Rating({ photo, photoIndex }) {
   const howManyStars = parseInt(rating);
   for (let i = 0; i < howManyStars; i += 1) {
     ratingsArray.push(
-      <img src="./resources/rating.png" alt="X" />,
+      <img src="https://guilttripadvisor-phonxay.s3.us-east-2.amazonaws.com/rating.png" alt="X" />,
     );
   }
 

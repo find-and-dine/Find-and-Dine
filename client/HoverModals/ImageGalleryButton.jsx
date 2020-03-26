@@ -1,9 +1,9 @@
 import React from 'react';
-//incomplete
+
 const ImageGalleryButton = () => (
   <div id="image-gallery-button">
     <img
-      src="./resources/gallery.png"
+      src="https://guilttripadvisor-phonxay.s3.us-east-2.amazonaws.com/gallery.png"
       alt="gallery button"
       width="100%"
     />

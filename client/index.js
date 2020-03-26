@@ -5,5 +5,4 @@ import path from 'path';
 import App from './components/App';
 import './styles.css';
 
-console.log('service', window.document.URL);
 ReactDOM.render(<App id={path.basename(window.document.URL)} />, document.getElementById('image-gallery'));

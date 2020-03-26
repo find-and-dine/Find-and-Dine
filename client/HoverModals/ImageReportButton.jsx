@@ -3,7 +3,7 @@ import React from 'react';
 const ImageReportButton = () => (
   <div id="image-report-button">
     <img
-      src="./resources/report.png"
+      src="https://guilttripadvisor-phonxay.s3.us-east-2.amazonaws.com/report.png"
       alt="gallery button"
       width="100%"
     />

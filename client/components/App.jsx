@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-console */
 import React, { Component } from 'react';
 import axios from 'axios';
@@ -59,11 +60,13 @@ class App extends Component {
         </div>
         <div id="focused-image-viewer">
           {photoModal ? (
-            <FocusedImagesModal
-              closeModal={this.exitImageModal}
-              photoIndex={photoIndex}
-              photos={photos}
-            />
+            <div id="modal-root">
+              <FocusedImagesModal
+                closeModal={this.exitImageModal}
+                photoIndex={photoIndex}
+                photos={photos}
+              />
+            </div>
           )
             : null}
         </div>

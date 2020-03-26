@@ -16,7 +16,7 @@ const makeOnePhoto = () => {
 };
 const getPhotos = () => {
   const photos = [];
-  const numOfPhotos = Math.floor((Math.random() * 6) + 5);
+  const numOfPhotos = Math.floor((Math.random() * 6) + 6);
   for (let i = 0; i < numOfPhotos; i += 1) {
     const newPhoto = makeOnePhoto();
     photos.push(newPhoto);

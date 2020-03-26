@@ -11,8 +11,9 @@
 }
 
 .image-mosaic {
+  display: flex;
   height: 100%;
-  width: auto;
+  width: 100%;
 }
 
 .box0 {
@@ -56,7 +57,6 @@
   display: grid;
   grid-template-columns: repeat(24, 1fr);
   grid-template-rows: repeat(24, 1fr);
-  grid-template-areas: 'left center right';
   position: fixed;
   height: 100%;
   width: 100%;
@@ -161,15 +161,21 @@ grid-area: 12 / 1 / 12 / 11;
 }
 
 #image-carousel-position {
-grid-area: 12 / 1 / 13 / 13;
+grid-area: 12 / 1 / 13 / 14;
 background-color:black;
 
+}
+
+#image-carousel-container {
+ display: flex;
+ max-width: 100%;
+ overflow-x: scroll;
 }
 
 .image-carousel {
   padding: 10px 26px;
   position: relative;
-background-color:black;
+  background-color:black;
 }
 
 

@@ -11,7 +11,7 @@ class DisplayFocusedImage extends Component {
     super(props);
     this.state = {
       dynamicPhotoIndex: props.photoIndex,
-      toggleHoverModal: false,
+      toggleHoverModal: true,
     };
     this.leftButtonClickHandler = this.leftButtonClickHandler.bind(this);
     this.rightButtonClickHandler = this.rightButtonClickHandler.bind(this);
@@ -32,11 +32,11 @@ class DisplayFocusedImage extends Component {
       dynamicPhotoIndex: dynamicPhotoIndex + 1,
     });
   }
-
+//FIX
   toggleHoverModal() {
     const { toggleHoverModal } = this.state;
     this.setState({
-      toggleHoverModal: !toggleHoverModal,
+      toggleHoverModal: toggleHoverModal,
     });
   }
 

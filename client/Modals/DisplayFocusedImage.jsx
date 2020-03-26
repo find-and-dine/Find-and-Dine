@@ -20,13 +20,18 @@ class DisplayFocusedImage extends Component {
   }
 
   leftButtonClickHandler() {
-    const { closeModal } = this.props;
+    const { closeModal, photoCount } = this.props;
     const { dynamicPhotoIndex } = this.state;
+    console.log('photo count : ', photoCount)
     if(dynamicPhotoIndex > 0) {
       this.setState({
         dynamicPhotoIndex: dynamicPhotoIndex - 1,
       });
-    }else{closeModal()}
+    }else{
+      this.setState({
+        dynamicPhotoIndex: photoCount - 1,
+      })
+    }
   }
 
   rightButtonClickHandler() {
@@ -36,7 +41,11 @@ class DisplayFocusedImage extends Component {
       this.setState({
         dynamicPhotoIndex: dynamicPhotoIndex + 1,
       });
-    }else{ closeModal()}
+    }else{
+      this.setState({
+        dynamicPhotoIndex: 0,
+      })
+    }
   }
 
   toggleHoverModal() {

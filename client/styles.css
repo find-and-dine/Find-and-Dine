@@ -1,6 +1,6 @@
 
 
-.grid-mosaic {
+.image-gallery-grid-mosaic {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -16,36 +16,36 @@
   width: 100%;
 }
 
-.box0 {
+.image-mosaic-box0 {
   grid-area: 1 / -5 / 3 / -7;
   margin: 2px;
 
 
 }
-.box1 {
+.image-mosaic-box1 {
   grid-area: 1 / -5 / 2 / -4;
   margin: 2px;
 
 
 }
-.box2 {
+.image-mosaic-box2 {
   grid-area: 1/ -2 / 2 / -4;
   margin: 2px;
 
 }
-.box3 {
+.image-mosaic-box3 {
   grid-area: 2 / -3 / 3 / -5;
   margin: 2px;
 
 }
-.box4 {
+.image-mosaic-box4 {
 
   grid-area: 2 / -2 / 3 / -3;
   margin: 2px;
 
 }
 
-.box5{
+.image-mosaic-box5{
   grid-area: 1 / 2 / 3 / 6;
   margin: 2px;
 }
@@ -66,17 +66,18 @@
 }
 
 /**************************************************************/
-#exit-button-background {
+#image-gallery-exit-button-background {
   grid-area: 1 / 1 / 2 / 24;
   background-color: #f2f2f2;
   z-index: 1;
 }
-#exit-button {
+#image-gallery-exit-button {
   grid-column: -1 / -2;
   background-color: #f2f2f2;
   text-align: end;
   font-size: 30px;
   z-index: 2;
+  cursor: pointer;
 
 }
 /**************************************************************/
@@ -132,7 +133,7 @@ grid-column: 1 / 8;
   grid-area: 1 / 1 / 25 / 19;
 }
 
-#left-button {
+#image-gallery-left-button {
 grid-area: 7/ 1 / 7 / 2;
 height: 100%;
 width: 50px;
@@ -143,7 +144,7 @@ z-index:10;
 padding-top:50px;
 }
 
-#right-button {
+#image-gallery-right-button {
 grid-area: 7/ -1 / 7 / -1;
 height: 100%;
 width: 50px;
@@ -153,6 +154,7 @@ text-align: center;
 z-index: 9;
 padding-top:50px;
 margin-left:78px;
+cursor: pointer;
 }
 
 .image-carousel-modal {
@@ -173,9 +175,11 @@ background-color:black;
 }
 
 .image-carousel {
-  padding: 10px 26px;
+  margin-left: 20px;
+  margin-right: 20px;
   position: relative;
   background-color:black;
+  cursor: pointer;
 }
 
 

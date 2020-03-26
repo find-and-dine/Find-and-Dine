@@ -28,7 +28,7 @@ class DisplayFocusedImage extends Component {
       });
     }else{closeModal()}
   }
-//TODO need .length
+
   rightButtonClickHandler() {
     const { closeModal, photoCount } = this.props;
     const { dynamicPhotoIndex } = this.state;

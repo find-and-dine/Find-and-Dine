@@ -2,7 +2,7 @@ import React from 'react';
 
 const RightButton = ({ rightClick }) => (
   <div
-    id="right-button"
+    id="image-gallery-right-button"
     onClick={rightClick}
     type="button"
   >

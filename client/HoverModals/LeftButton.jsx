@@ -2,7 +2,7 @@ import React from 'react';
 
 const LeftButton = ({ leftClick }) => (
   <div
-    id="left-button"
+    id="image-gallery-left-button"
     onClick={leftClick}
   >
     &#60;

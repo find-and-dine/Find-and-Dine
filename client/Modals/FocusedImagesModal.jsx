@@ -18,12 +18,12 @@ class FocusedImagesModal extends Component {
           <button
             onClick={closeModal}
             type="button"
-            id="exit-button"
+            id="image-gallery-exit-button"
           >
             &times;
           </button>
           <div
-            id="exit-button-background"
+            id="image-gallery-exit-button-background"
           />
           <div
             id="image-black-background"

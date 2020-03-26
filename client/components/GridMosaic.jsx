@@ -7,7 +7,7 @@ const GridMosaic = ({ photo, openModal }) => {
 
   for (let i = 0; i < 6; i += 1) {
     items.push(
-      <div className={`box${i}`}>
+      <div className={`image-mosaic-box${i}`}>
         <img
           key={`${i}value`}
           className="image-mosaic"

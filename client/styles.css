@@ -2,8 +2,8 @@
 
 .grid-mosaic {
   display: grid;
-  grid-template-columns: repeat(11, 169px);
-  grid-template-rows: repeat(2, 238px);
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   cursor: pointer;
   padding: 15px 25px;
   border-top: 1px solid gray;
@@ -12,7 +12,7 @@
 
 .image-mosaic {
   height: 100%;
-  width: 100%;
+  width: auto;
 }
 
 .box0 {

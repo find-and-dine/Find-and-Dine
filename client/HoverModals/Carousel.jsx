@@ -3,11 +3,6 @@ import React from 'react';
 function Carousel({
   photoIndex, images, photos, handleImageClick,
 }) {
-  // const imagesArray = [];
-  // Photo is one image
-  // need to pass in photoArray
-  // implement mouse hover
-  console.log(handleImageClick)
   const { photo } = photos;
   const photoArray = [];
   let accum = 0;

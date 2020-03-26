@@ -32,6 +32,9 @@ class FocusedImagesModal extends Component {
             <DisplayFocusedImage
               photos={photos}
               photoIndex={photoIndex}
+              closeModal={closeModal}
+              photoCount={photos.photo.length}
+
             />
           </div>
         </div>

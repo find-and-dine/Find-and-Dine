@@ -22,7 +22,6 @@ class DisplayFocusedImage extends Component {
   leftButtonClickHandler() {
     const { closeModal, photoCount } = this.props;
     const { dynamicPhotoIndex } = this.state;
-    console.log('photo count : ', photoCount)
     if(dynamicPhotoIndex > 0) {
       this.setState({
         dynamicPhotoIndex: dynamicPhotoIndex - 1,
@@ -67,7 +66,6 @@ class DisplayFocusedImage extends Component {
     const totalPhotos = photos.length;
     const { photo } = photos;
     const { dynamicPhotoIndex, toggleHoverModal } = this.state;
-
     if (toggleHoverModal === true) {
       return (
         <div className="image-gallery-modal-container">

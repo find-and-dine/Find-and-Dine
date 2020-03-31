@@ -1,5 +1,5 @@
 # What image do you want to start building on?
-FROM gallery
+FROM node:latest
 
 # Make a folder in your image where your app's source code can live
 RUN mkdir -p /src/app
@@ -13,8 +13,10 @@ COPY . /src/app
 # Does your app have any dependencies that should be installed?
 RUN npm install
 
+RUN npm run build
+
 # What port will the container talk to the outside world with once created?
-EXPOSE 4001
+EXPOSE 3001
 
 # How do you start your app?
-CMD [ "npm", "start", "build", ]
+CMD [ "npm", "start" ]

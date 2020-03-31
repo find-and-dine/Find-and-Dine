@@ -7,9 +7,7 @@ import FocusedImagesModal from '../Modals/FocusedImagesModal';
 class App extends Component {
   constructor(props) {
     super(props);
-    const { id } = this.props;
     this.state = {
-      id,
       photos: [],
       photosLoaded: false,
       photoModal: false,
@@ -20,8 +18,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const { id } = this.state;
-    axios.get(`/photos/${id}`).then()
+    axios.get('/photos/55').then()
       .then((response) => (this.setState({ photos: response.data[0], photosLoaded: true })))
       .catch((err) => console.log(err));
   }
@@ -29,7 +26,7 @@ class App extends Component {
   clickImageModal(photoIndex) {
     this.setState({
       photoModal: true,
-      photoIndex,
+      photoIndex: photoIndex,
 
     });
   }

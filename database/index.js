@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://locaLhost/seedDb', { useNewUrlParser: true });
+mongoose.connect('mongodb://database/seedDb', { useNewUrlParser: true });
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));

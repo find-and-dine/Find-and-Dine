@@ -1,6 +1,6 @@
 # Find and Dine
 
-This is a mockup of a "Questions & Answers" component for a restaurant reviews app.
+This is a mockup of a "Image Gallery and Mosaic" component for a restaurant reviews app.
 
 Built with HTML, CSS, MongoDB, Express.js, React, Node.js, and Docker.
 
@@ -31,5 +31,6 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 - Node 6.13.0
 
 ## Screen capture
-
+![Screencast](https://giphy.com/gifs/jPM6MCEVEDPwT5KVYr/html5)
+![Screencast](https://i.imgur.com/Qp9I81j.gif)
 ![Screencast](https://i.imgur.com/Qp9I81j.gif)

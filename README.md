@@ -32,5 +32,5 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 ## Screen capture
 ![Searching](https://media.giphy.com/media/jPM6MCEVEDPwT5KVYr/giphy.gif)
-![Screencast](https://media.giphy.com/media/jPM6MCEVEDPwT5KVYr/giphy.gif)
+![Searching](https://media.giphy.com/media/TiD5KnzynJFiqAj9EZ/giphy.gif)
 ![Screencast](https://i.imgur.com/Qp9I81j.gif)

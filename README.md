@@ -31,6 +31,6 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 - Node 6.13.0
 
 ## Screen capture
-![Screencast](https://giphy.com/gifs/jPM6MCEVEDPwT5KVYr/html5)
-![Screencast](https://i.imgur.com/Qp9I81j.gif)
+![Searching](https://media.giphy.com/media/jPM6MCEVEDPwT5KVYr/giphy.gif)
+![Screencast](https://media.giphy.com/media/jPM6MCEVEDPwT5KVYr/giphy.gif)
 ![Screencast](https://i.imgur.com/Qp9I81j.gif)

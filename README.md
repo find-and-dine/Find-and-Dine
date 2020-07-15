@@ -1,7 +1,7 @@
 # Find and Dine
 
 This is a mockup of a "Image Gallery and Mosaic" component for a restaurant reviews app.
-
+Please navigate to the "working" branch for most up-to-date code.
 Built with HTML, CSS, MongoDB, Express.js, React, Node.js, and Docker.
 
 ## Related Projects

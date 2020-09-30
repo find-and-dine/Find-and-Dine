@@ -1,6 +1,7 @@
 # Find and Dine
 
 This is a mockup of a "Image Gallery and Mosaic" component for a restaurant reviews app.
+I built this application to advance my skills in CSS. I was challenged to build the entire Photo Gallery and a modal that displayed a carousel. This project was challenging because I did not use any packages or extra libraries to create my component.
 Please navigate to the "working" branch for most up-to-date code.
 Built with HTML, CSS, MongoDB, Express.js, React, Node.js, and Docker.
 
